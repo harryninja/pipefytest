@@ -163,8 +163,7 @@ Essa separacao facilita a manutencao e deixa explicito que a montagem do payload
 ## Arquivos de apoio para a defesa
 
 - `README.md`: visao geral do projeto, execucao local, testes e arquitetura.
-- `VIDEO_DEFESA.md`: roteiro pronto para apresentar os itens 2, 3 e 4 do video.
-
+  
 ## Visao de producao na AWS
 
 Uma evolucao natural desta solucao em producao poderia ser:

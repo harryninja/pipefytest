@@ -1,0 +1,111 @@
+{
+  "info": {
+    "name": "Mundo Invest - Teste Tecnico Backend",
+    "_postman_id": "5f7db0f5-2d7a-4c17-aeb0-f3f3d71ef001",
+    "description": "Colecao pronta para demonstrar os endpoints da API no video de defesa.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Healthcheck",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/health",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "health"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Criar Cliente",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cliente_nome\": \"Joao Silva\",\n  \"cliente_email\": \"joao.silva@example.com\",\n  \"tipo_solicitacao\": \"Atualizacao cadastral\",\n  \"valor_patrimonio\": 250000\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/clientes",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "clientes"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Processar Webhook Pipefy",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"event_id\": \"evt_123\",\n  \"card_id\": \"card_456\",\n  \"cliente_email\": \"joao.silva@example.com\",\n  \"timestamp\": \"2026-05-18T12:00:00Z\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/webhooks/pipefy/card-updated",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "webhooks",
+            "pipefy",
+            "card-updated"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Reprocessar Webhook Duplicado",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"event_id\": \"evt_123\",\n  \"card_id\": \"card_456\",\n  \"cliente_email\": \"joao.silva@example.com\",\n  \"timestamp\": \"2026-05-18T12:00:00Z\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/webhooks/pipefy/card-updated",
+          "host": [
+            "{{base_url}}"
+          ],
+          "path": [
+            "webhooks",
+            "pipefy",
+            "card-updated"
+          ]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://127.0.0.1:8000"
+    }
+  ]
+}
